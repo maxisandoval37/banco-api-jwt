@@ -28,8 +28,9 @@ public class BancoController {
         return bancoService.getById(id);
     }
 
-    @PostMapping
+    @PostMapping("/create")
     public Banco create(@RequestBody Banco banco) {
+        banco.setId(null);
         return bancoService.save(banco);
     }
 
