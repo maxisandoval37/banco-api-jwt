@@ -18,7 +18,7 @@ public class BancoController {
     private final BancoService bancoService;
     private final HttpServletRequest request;
 
-    @GetMapping
+    @GetMapping("/all")
     public List<Banco> getAll() {
         return bancoService.getAll();
     }
@@ -44,7 +44,7 @@ public class BancoController {
     }
 
     @GetMapping("/activos")
-    public ResponseEntity<List<Banco>> getActivos() {
+    public ResponseEntity<List<Banco>> getActiveBanks() {
         return ResponseEntity.ok(bancoService.getActivos());
     }
 
